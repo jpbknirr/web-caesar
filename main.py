@@ -29,8 +29,8 @@ form = """
     <body>
       <form method="post">
             Rotate by:
-            <input type="text" name="rot" value=0>
-            <textarea input type="text" name="text">
+            <input type="text" name="rot" value="0"/>
+            <textarea input type="text" name="text"/>
             </textarea>
             <input type="submit" value="Submit Query"/>
         </form>
@@ -44,8 +44,9 @@ def encrypt():
     rot = int(rotation_number)
     form_text = request.form['text']
     text = str(form_text)
-    encrypted_text = rotate_string(text, rot)  
-    return "<h1>" + encrypted_text + "</h1>"
+    encrypted_text = rotate_string(text, rot)
+    answer = "<h1>" + encrypted_text + "</h1>"
+    return answer 
 
 
 @app.route("/")
